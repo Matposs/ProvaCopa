@@ -1,0 +1,49 @@
+<mat-card class="container">
+  <mat-card-header>
+    <mat-card-title> Palpitar Jogo </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="input"> 
+    <mat-form-field *ngIf="selecaoA" class="input" for = "id" id = "selecaoA">
+			<input
+			disabled=""
+			matInput
+			placeholder="{{ jogo.selecaoA }}"
+			type="text"
+			name="id"
+			[(ngModel)]="selecaoA"
+			/>
+		</mat-form-field>
+
+		<mat-form-field class="input" id="placarA">
+			<mat-label for="placarA">Placar do time A:</mat-label>
+			<input matInput type="number" name="placarA" [(ngModel)]="placarA"/>	
+		</mat-form-field>
+
+		<mat-form-field *ngIf="selecaoB" class="input" for = "id" id = "SelecaoB">
+			<input
+			placeholder="{{ jogo.selecaoB }}"
+			disabled=""
+			matInput
+			type="text"
+			name="id"
+			[(ngModel)]="selecaoB"
+			/>
+		</mat-form-field>
+
+		<mat-form-field class="input" id="placarB">
+				<mat-label for="placarB">Placar do time A:</mat-label>
+				<input matInput type="number" name="placarB" [(ngModel)]="placarB"/>	
+		</mat-form-field>
+	</mat-card-content>
+
+	<button
+    mat-raised-button
+    color="warn"
+    *ngIf="!id"
+    id="btnPalpitar"
+    (click)="palpitar()"
+  >
+    Palpitar
+</button>
+
+</mat-card>
